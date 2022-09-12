@@ -24,7 +24,7 @@ export const Login = ({ setToken, setUserId }) => {
             localStorage.setItem('is_active', res.is_active)
             setToken(res.token)
             setUserId(res.user_id)
-            navigate("/posts")
+            navigate("/players")
         }
         else {
             setIsUnsuccessful(true)
