@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 
@@ -6,7 +6,7 @@ export const NavBar = ({ isStaff, token, setToken }) => {
     const navigate = useNavigate()
     const navbar = useRef()
     const hamburger = useRef()
-    let userId = localStorage.getItem('user_id')
+    // let userId = localStorage.getItem('user_id')
 
     const showMobileNavbar = () => {
         hamburger.current.classList.toggle('is-active')
@@ -38,7 +38,10 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                                 {
                                     isStaff
                                         ? <>
+                                            <Link to="/coachhome" className="navbar-item">Home</Link>
                                             <Link to="/players" className="navbar-item">Players</Link>
+                                            <Link to="/games" className="navbar-item">Games</Link>
+                                            <Link to="/openings" className="navbar-item">Open Positions</Link>
                                             
                                         </>
                                         : ""
@@ -62,7 +65,7 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                                     </>
                                     :
                                     <>
-                                       
+                                    
                                     </>
                             }
                         </div>
