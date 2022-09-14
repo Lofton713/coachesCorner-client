@@ -13,6 +13,7 @@ import { CoachList } from "../components/coach/CoachList"
 import { CollegeList } from "../components/college/CollegeList"
 import { OpenSpotList } from "../components/openSpots/OpenSpotsList"
 import { PlayerProfile } from "../components/profile/PlayerProfile"
+import { PlayerDetail } from "../components/player/PlayerDetail"
 
 export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, isActive }) => {
     return <Routes>
@@ -35,6 +36,7 @@ export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, 
                 <Route path="/games" element={<GameList />} />
                 <Route path="/openings" element={<OpenPositionList />} />
                 <Route path="/profile" element={<CoachProfile />} />
+                <Route path="/players/:playerId" element={<PlayerDetail />} />
 
             </>
             :<>

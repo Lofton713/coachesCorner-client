@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { getAllPlayers } from "../../managers/PlayerManager"
 
 export const PlayerList = () => {
@@ -20,13 +20,12 @@ export const PlayerList = () => {
             {
                 players.map(player => {
                     return  <section key={`player--${player.id}`} className="player">
+                        <header className="lotHeader">
+                            <Link className="player__name" to={`/players/${player.id}`}>{player?.user?.first_name} {player?.user?.last_name}</Link>
+                        </header>
                         <ol>
-
-                            <li>
-                                <div className="player__name">{player?.user?.first_name} {player?.user?.last_name}</div>
                                 <div className="player__birthday"> Birthday: {player.birthday} </div>
                                 <div className="player_city"> City: {player?.hometown}, {player.state}</div>
-                            </li>
                         </ol>
                         
                         

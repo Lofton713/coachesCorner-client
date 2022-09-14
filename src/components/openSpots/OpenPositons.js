@@ -28,8 +28,9 @@ export const OpenPositionList = () => {
                         <ol>
 
                             <li>
-                                <div className="OP__position">{openPosition.position} </div>
-                                <div className="OP_description">{openPosition.description}  </div>
+                                <div className="OP__position">Position:{openPosition.position} </div>
+                                <div className="OP_description">Description: {openPosition.description}  </div>
+                                
                                 
                             </li>
                         </ol>

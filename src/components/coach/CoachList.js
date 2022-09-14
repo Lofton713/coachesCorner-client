@@ -25,7 +25,7 @@ export const CoachList = () => {
 
                             <li>
                                 <div className="coach__name">Name: {coach?.user?.first_name} {coach.user.last_name} </div>
-                                <div className="coach__college">University: {coach.college}  </div>
+                                <div className="coach__college">University: {coach?.college?.name}  </div>
                                 
                             </li>
                         </ul>

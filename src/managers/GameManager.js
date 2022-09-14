@@ -14,3 +14,12 @@ export const getGameById = (id) => {
     })
         .then(res => res.json())
 }
+
+export const getGamesByUser = (id) => {
+    return fetch(`http://localhost:8000/games?user=${id}`, {
+        headers: {
+        'Authorization': `Token ${localStorage.getItem('auth_token')}`
+        }
+    })
+        .then(res => res.json())
+}
