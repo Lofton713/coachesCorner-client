@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getCurrentUsersOpenPositions } from "../../managers/OpenPositionManager"
+import { OpenPositionForm } from "./OpenPositionForm"
 
 export const OpenPositionList = () => {
     const [openPositions, setOpenPositions] = useState([])
@@ -38,6 +39,9 @@ export const OpenPositionList = () => {
                     </section>
                 })
             }
+            <div className="column">
+        <OpenPositionForm  />
+      </div>
         </article>
     )
 }
