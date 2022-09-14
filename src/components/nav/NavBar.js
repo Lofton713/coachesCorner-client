@@ -6,7 +6,7 @@ export const NavBar = ({ isStaff, token, setToken }) => {
     const navigate = useNavigate()
     const navbar = useRef()
     const hamburger = useRef()
-    // let userId = localStorage.getItem('user_id')
+    let userId = localStorage.getItem('user_id')
 
     const showMobileNavbar = () => {
         hamburger.current.classList.toggle('is-active')
@@ -33,15 +33,23 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                     {
                         token
                             ? <>
+                                <Link to="/" className="navbar-item">Home</Link>
+                                <Link to="/playerHome" className="navbar-item">Player Portal</Link>
+                                <Link to="/coaches" className="navbar-item">Coaches</Link>
+                                <Link to="/colleges" className="navbar-item">Colleges</Link>
+                                <Link to="/openspots" className="navbar-item">Open Positions</Link>
                                 
-                                {/* <Link to={`/users/${userId}`} className="navbar-item">My Profile</Link> */}
+                                <Link to={`/users/${userId}`} className="navbar-item">My Profile</Link>
                                 {
                                     isStaff
                                         ? <>
-                                            <Link to="/coachhome" className="navbar-item">Home</Link>
+                                            <Link to="/" className="navbar-item">Home</Link>
+                                            <Link to="/coachhome" className="navbar-item">Coach Portal</Link>
                                             <Link to="/players" className="navbar-item">Players</Link>
                                             <Link to="/games" className="navbar-item">Games</Link>
                                             <Link to="/openings" className="navbar-item">Open Positions</Link>
+                                            <Link to={`/users/${userId}`} className="navbar-item">My Profile</Link>
+                                            
                                             
                                         </>
                                         : ""

@@ -28,8 +28,8 @@ export const OpenPositionList = () => {
                         <ol>
 
                             <li>
-                                <div className="game__player">{openPosition.position} </div>
-                                <div className="game__time">{openPosition.description}  </div>
+                                <div className="OP__position">{openPosition.position} </div>
+                                <div className="OP_description">{openPosition.description}  </div>
                                 
                             </li>
                         </ol>
