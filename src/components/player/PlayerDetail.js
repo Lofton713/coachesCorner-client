@@ -70,7 +70,7 @@ export const PlayerDetail = () => {
                     </ol>
                 </article>
 
-            <button> Add to Recuits List</button>
+            <button> Add to Recruits List</button>
         </>
     )
 }

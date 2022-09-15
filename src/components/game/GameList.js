@@ -14,7 +14,8 @@ export const GameList = () => {
 
 
 
-    return (
+    return ( 
+        <>
         <article className="games">
             <header>
                 Game List
@@ -22,21 +23,20 @@ export const GameList = () => {
             {
                 games.map(game => {
                     return  <section key={`game--${game.id}`} className="game">
-                        <ol>
+                        <ul>
 
                             <li>
                                 <div className="game__player">{game?.date} </div>
                                 <div className="game__time">{game.time}  </div>
                                 <div className="game_player">{game?.player?.user?.first_name} {game.player.user.last_name} </div>
                                 <div className="game_location">Location: {game.city}, {game.state}</div>
+                                <button>Attend</button>
                             </li>
-                        </ol>
-                        
-                        
-                        
+                        </ul>                  
                     </section>
                 })
             }
         </article>
+        </>
     )
 }
