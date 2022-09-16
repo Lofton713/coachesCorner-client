@@ -24,6 +24,15 @@ export const createAttendee = (attendee) => {
             'Content-Type': 'application/json',
             'Authorization': `Token ${localStorage.getItem('auth_token')}`
         },
-        body: JSON.stringify(reaction)
+        body: JSON.stringify(attendee)
     }).then(res => res.json())
+}
+
+export const deleteRecruit = (AttendeeId) => {
+    return fetch(`http://localhost:8000/attendees/${attendeeId}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Token ${localStorage.getItem('auth_token')}`
+        }
+    })
 }
