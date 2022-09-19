@@ -35,11 +35,11 @@ export const createGame = (game) => {
     }).then(res => res.json())
 }
 
-export const deletePlayer = (playerId) => {
-    return fetch(`http://localhost:8000/players/${playerId}`, {
-      method: "DELETE",
-      headers: {
-        'Authorization': `Token ${localStorage.getItem('auth_token')}`
-      }
+export const deleteGame = (gameId) => {
+    return fetch(`http://localhost:8000/games/${gameId}`, {
+        method: "DELETE",
+        headers: {
+            'Authorization': `Token ${localStorage.getItem('auth_token')}`
+        }
     })
-  }
+}

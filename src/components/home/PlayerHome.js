@@ -1,7 +1,9 @@
 import { FavoritesList } from "../favorites/FavoriteList"
 import { GameForm, GameFrom } from "../game/GameForm"
+import { GameList } from "../game/GameList"
 import { EditPlayer } from "../player/PlayerEdit"
 import { PlayerProfile } from "../profile/PlayerProfile"
+import { PlayerGameList } from "../game/PlayerGameList"
 
 
 export const PlayerHome = () => {
@@ -22,6 +24,10 @@ export const PlayerHome = () => {
             <section className="gameForm" class="column">
                 
                 <FavoritesList />
+            </section>
+            <section className="gameForm" class="column">
+                
+                <PlayerGameList />
             </section>
             <div>
 
