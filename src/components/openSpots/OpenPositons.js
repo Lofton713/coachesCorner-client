@@ -18,14 +18,14 @@ export const OpenPositionList = () => {
 
 
     return (
-        <article className="MyOpenPositions">
+        <article className="MyOpenPositions" class="columns is-multiline is-mobile">
             <header>
                 My Open Positions
             </header>
             {
                 openPositions.map(openPosition => {
-                    return  <section key={`open--${openPosition.id}`} className="position">
-                        <ol>
+                    return  <section key={`open--${openPosition.id}`} className="position" class="columns">
+                        <ol class="box">
 
                             <li>
                                 <div className="OP__position">Position:{openPosition.position} </div>

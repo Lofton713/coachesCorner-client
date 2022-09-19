@@ -42,7 +42,7 @@ export const GameForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" class="field is-horizontal">
                     <label htmlFor="time">Time: </label>
                     <input type="time" name="time" required autoFocus className="form-control"
                         value={currentGame.time}
@@ -51,7 +51,7 @@ export const GameForm = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <div className="form-group">
+                <div className="form-group" class="field is-horizontal">
                     <label htmlFor="city">City: </label>
                     <input type="text" name="city" required autoFocus className="form-control"
                         value={currentGame.city}

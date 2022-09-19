@@ -14,14 +14,14 @@ export const CoachList = () => {
 
 
     return (
-        <article className="games">
-            <header>
+        <article className="games" class="columns is-multiline is-mobile">
+            <header class="title 2">
                 Coaches
             </header>
             {
                 coaches.map(coach => {
-                    return  <section key={`coach--${coach.id}`} className="coach">
-                        <ul>
+                    return  <section key={`coach--${coach.id}`} className="coach" class="column">
+                        <ul class="box">
 
                             <li>
                                 <div className="coach__name">Name: {coach?.user?.first_name} {coach.user.last_name} </div>

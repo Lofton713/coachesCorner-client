@@ -8,7 +8,7 @@ export const getCurrentUsersFavorites = () => {
 }
 
 export const createFavorite = (favorite) => {
-    return fetch('http://localhost:8000/favorite', {
+    return fetch('http://localhost:8000/favorites', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -44,6 +44,7 @@ export const PlayerDetail = () => {
                         <div className="player_location">Location: {player?.hometown}, {player.state}</div>
                         <div className="Player_gpa"> GPA: {player.GPA}  </div>
                         <div className="Player_Email"> Email: {player?.user?.email}  </div>
+                        <div className="Player_bio"> About Me: {player.bio}  </div>
                     </ol>
                 </article>
             
