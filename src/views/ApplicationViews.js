@@ -23,7 +23,7 @@ export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, 
         <Route element={<Authorized token={token} isActive={isActive} />}></Route>
             {/* Add Routes here */}
             <Route path="" element={<HomePage />} />
-            <Route path="/playerhome" element={<PlayerHome />} />
+            <Route path="/playerhome/:userId" element={<PlayerHome />} />
             <Route path="/coaches" element={<CoachList />} />
             <Route path="/colleges" element={<CollegeList />} />
             <Route path="/openspots" element={<OpenSpotList />} />

@@ -34,3 +34,12 @@ export const createGame = (game) => {
         body: JSON.stringify(game)
     }).then(res => res.json())
 }
+
+export const deletePlayer = (playerId) => {
+    return fetch(`http://localhost:8000/players/${playerId}`, {
+      method: "DELETE",
+      headers: {
+        'Authorization': `Token ${localStorage.getItem('auth_token')}`
+      }
+    })
+  }

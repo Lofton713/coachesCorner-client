@@ -34,7 +34,7 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                         token
                             ? <>
                                 <Link to="/" className="navbar-item">Home</Link>
-                                <Link to="/playerHome" className="navbar-item">Player Portal</Link>
+                                <Link to={`/playerHome/${userId}`} className="navbar-item">Player Portal</Link>
                                 <Link to="/coaches" className="navbar-item">Coaches</Link>
                                 <Link to="/colleges" className="navbar-item">Colleges</Link>
                                 <Link to="/openspots" className="navbar-item">Open Positions</Link>
