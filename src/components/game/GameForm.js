@@ -29,9 +29,9 @@ export const GameForm = () => {
     
 
     return (<>
-        
+        <h2 class="title is-4">Add an Upcoming Match</h2>
         <form className="gameForm">
-            <h2 className="gameForm__title">Add an Upcoming Game</h2>
+            
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="date">Date: </label>

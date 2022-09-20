@@ -26,3 +26,11 @@ export const deleteFavorite = (favoriteId) => {
         }
     })
 }
+
+export const getAllFavorites = () => {
+    return fetch("http://localhost:8000/favorites", {
+        headers: {
+            'Authorization': `Token ${localStorage.getItem('auth_token')}`
+        }
+    }).then(res => res.json())
+};

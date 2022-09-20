@@ -20,7 +20,7 @@ export const PlayerHome = () => {
         <image class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png"></image>
         </figure>
         <article class="columns">
-            <section className="favorites">Favorite Schools</section>
+            
             <section className="gameForm" class="column">
                 
                 <FavoritesList />

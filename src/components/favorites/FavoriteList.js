@@ -1,36 +1,57 @@
 import { useEffect, useState } from "react"
-import { getCurrentUsersFavorites } from "../../managers/FavoriteManager"
+import { useNavigate, useParams } from "react-router-dom"
+import { deleteFavorite, getAllFavorites } from "../../managers/FavoriteManager"
+import { getCurrentPlayer } from "../../managers/PlayerManager"
 
 export const FavoritesList = ()  => {
     const [favorites, setFavorites] = useState([])
+    const [userFavorites, setUserFavorites] = useState([])
+    const { userId } = useParams()
+    const navigate = useNavigate()
+
+    const [currentPlayer, setCurrentPlayer] = useState({})
+
+    useEffect(() => {
+        getCurrentPlayer(userId).then(data => setCurrentPlayer(data))
+    },[]
+    )
 
     const loadFavorites = () => {
-        getCurrentUsersFavorites()
+        getAllFavorites()
             .then((data) => {
                 setFavorites(data)
             })
     }
 
     useEffect(() => {
-        loadFavorites()
+        loadFavorites(favorites)
     },[])
 
-    return (
+    useEffect(
+        () => {
+            const filteredFavorites = favorites.filter(fav => fav?.player?.user.id === currentPlayer.id )
+            setUserFavorites(filteredFavorites)
+        },[favorites]
+    )
+
+    return (<>
+        <h2 class="title is-4">Favorite Schools</h2>
         <article className="MyOpenPositions" class="columns is-multiline is-mobile">
             
             {
-                favorites.map(favorite => {
-                    return  <section key={`fav--${favorite.id}`} className="position" class="columns">
-                        <ol class="box">
+                userFavorites.map(favorite => {
+                    return  <section key={`fav--${favorite.id}`} className="position" >
+                        <ul class="box">
 
                             <li>
-                                <div className="fav__School">Position:{favorite.position} </div>
-                                
-                                
-                                
+                                <div className="fav__School">Position: {favorite?.college?.name} </div>
+                                <div className="fav_location">Location: {favorite?.college?.city}, {favorite?.college?.state} </div>
                             </li>
-                        </ol>
-                        
+                        </ul>
+                    
+                        <button className="button is-danger" onClick={() => { deleteFavorite(favorite.id).then(() => {
+                                    navigate('/playerHome/userID')
+                                })}}>Delete</button>
                         
                         
                     </section>
@@ -38,6 +59,7 @@ export const FavoritesList = ()  => {
             }
             
         </article>
+        </>
     )
 
 
