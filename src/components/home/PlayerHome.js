@@ -11,15 +11,15 @@ export const PlayerHome = () => {
 
     return (<>
         <h1> Player Homepage </h1>
+        <figure class="image is-128x128">
+        <image class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png"></image>
+        </figure>
+        <article class="columns">
         
         <section className="gameForm" class="column">
                 
                 <EditPlayer />
             </section>
-        <figure class="image is-128x128">
-        <image class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png"></image>
-        </figure>
-        <article class="columns">
             
             <section className="gameForm" class="column">
                 

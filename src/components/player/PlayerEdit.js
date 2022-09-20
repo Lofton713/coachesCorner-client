@@ -160,11 +160,11 @@ export const EditPlayer = () => {
                 <div className="field is-grouped">
                     <div className="control">
                     <button type="submit"
-                  onClick={handleSubmit}
-                  className="button is-success">
-                  Update
-                </button>
-                    </div>
+                        onClick={handleSubmit}
+                        className="button is-success">
+                        Update
+                    </button>
+                </div>
 
                 </div>
 
