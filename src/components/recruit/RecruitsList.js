@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { deleteRecruit, getCurrentUsersRecruits } from "../../managers/RecruitManager"
 
-export const RecruitList = () => {
+export const RecruitsList = () => {
     const [recruits, setRecruits] = useState([])
 
     const loadRecruits = () => {
@@ -29,14 +29,14 @@ export const RecruitList = () => {
                         <ol>
 
                             <li>
-                                <div className="recruit__name">Name:{recruit.player.user.first_name} {recruit.player.user.last_name} </div>                                
+                                <div className="recruit__name">Name: {recruit.player.user.first_name} {recruit.player.user.last_name} </div>                                
                             </li>
                         </ol>
                         <button className="button is-danger" onClick={() => {
                             const confirmBox = window.confirm("Do you really want to remove this recruit?")
                             if (confirmBox)
                                 handleDelete(recruit.id)
-                        }}>delete</button>
+                        }}>Remove</button>
                         
                         
                     </section>

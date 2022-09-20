@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
-import { getCurrentUsersOpenPositions } from "../../managers/OpenPositionManager"
+import { useNavigate } from "react-router-dom"
+import { deleteOpenPosition, getCurrentUsersOpenPositions } from "../../managers/OpenPositionManager"
 import { OpenPositionForm } from "./OpenPositionForm"
 
 export const OpenPositionList = () => {
     const [openPositions, setOpenPositions] = useState([])
+    const navigate = useNavigate()
 
     const loadOpenPositions = () => {
         getCurrentUsersOpenPositions()
@@ -17,22 +19,25 @@ export const OpenPositionList = () => {
     }, [])
 
 
-    return (
-        <article className="MyOpenPositions" class="columns is-multiline is-mobile">
-            <header>
+    return (<>
+            <header class="title">
                 My Open Positions
             </header>
+        <article className="MyOpenPositions" class="columns">
             {
                 openPositions.map(openPosition => {
-                    return  <section key={`open--${openPosition.id}`} className="position" class="columns">
+                    return  <section key={`open--${openPosition.id}`} className="position" class="column">
                         <ol class="box">
 
-                            <li>
-                                <div className="OP__position">Position:{openPosition.position} </div>
-                                <div className="OP_description">Description: {openPosition.description}  </div>
+                            <li className="OP__position">Position: {openPosition.position} </li>
+                            <li className="OP_description">Description: {openPosition.description}  </li>
+                            <button class="button is-success is-small">View Applicants</button>
+                            
+                            <button class="button is-danger is-small" onClick={() => { deleteOpenPosition(openPosition.id).then(() => {
+                                navigate('/coachHome/userID')
+                            })}}>Delete</button>    
                                 
-                                
-                            </li>
+                            
                         </ol>
                         
                         
@@ -40,9 +45,10 @@ export const OpenPositionList = () => {
                     </section>
                 })
             }
-            <div className="column">
-        <OpenPositionForm  />
-      </div>
+            <div class="column" >
+                <OpenPositionForm  />
+            </div>
         </article>
+    </>
     )
 }

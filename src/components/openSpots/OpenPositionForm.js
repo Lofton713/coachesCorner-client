@@ -28,8 +28,8 @@ export const OpenPositionForm = () => {
     
 
     return (
-        <form className="openPositionForm">
-            <h2 className="openPositionForm__title">New Open Position</h2>
+        <form className="openPositionForm" class="form">
+            <h2 className="openPositionForm__title" class="title">New Open Position</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Position </label>
@@ -83,7 +83,7 @@ export const OpenPositionForm = () => {
                     createOpenPosition(openPosition)
                         .then(() => navigate("/openings"))
                 }}
-                className="btn btn-primary">Create</button>
+                class="button is-success is-small">Create</button>
         </form>
     )
 }

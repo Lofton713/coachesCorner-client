@@ -32,37 +32,38 @@ export const PlayerDetail = () => {
 
     return (
         <>
-            <h1> Player Details</h1>
-                <article>
+            <h1 class="title"> Player Details</h1>
+                <article class="card">
                     <section>
                         {player.profile_pic}
                     </section>
 
                     <ol>
-                        <div className="player__name">Name: {player?.user?.first_name} {player?.user?.last_name} </div>
-                        <div className="Player_bday"> Birthday: {player.birthday}  </div>
-                        <div className="player_location">Location: {player?.hometown}, {player.state}</div>
-                        <div className="Player_gpa"> GPA: {player.GPA}  </div>
-                        <div className="Player_Email"> Email: {player?.user?.email}  </div>
-                        <div className="Player_bio"> About Me: {player.bio}  </div>
+                        <li className="player__name">Name: {player?.user?.first_name} {player?.user?.last_name} </li>
+                        <li className="Player_bday"> Birthday: {player.birthday}  </li>
+                        <li className="player_location">Location: {player?.hometown}, {player.state}</li>
+                        <li className="Player_gpa"> GPA: {player.GPA}  </li>
+                        <li className="Player_Email"> Email: {player?.user?.email}  </li>
+                        <li className="Player_bio"> About Me: {player.bio}  </li>
                     </ol>
                 </article>
             
         
 
 
-            <h2> Upcoming Matches</h2>
+            <h2 class="title"> Upcoming Matches</h2>
                 <article>
                     {
                         playerGames.map(playerGame => {
-                            return <section key={`game--${playerGame.id}`} className="game">
-                                <ol>
-                                    <li>
-                                        <div className="game_date">Date: {playerGame?.date}</div>
-                                        <div className="game_date">Date: {playerGame?.city}, {playerGame?.state}</div>
-                                    </li>
-                                </ol>
-                                <button> Attend </button>
+                            return <section class="box" key={`game--${playerGame.id}`} className="game">
+                                <ul>
+                                    <li className="game_date">Game: {playerGame?.description}</li>
+                                    <li className="game_date">Date: {playerGame?.date}</li>
+                                    <li className="game_date">Location: {playerGame?.city}, {playerGame?.state}</li>
+                                    <li className="game_date">Time: {playerGame?.time}</li>
+                                    
+                                </ul>
+                                <button class="button is-success is-small">Attend</button>
                             </section>
                         })
                     }
@@ -71,7 +72,7 @@ export const PlayerDetail = () => {
                     </ol>
                 </article>
 
-            <button> Add to Recruits List</button>
+                <button class="button is-info">Add Recruit</button>
         </>
     )
 }

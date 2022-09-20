@@ -42,7 +42,7 @@ export const CollegeList = () => {
                             <li>
                                 <div className="college__name">University: {college?.name}</div>
                                 <div className="coach__college">location: {college.city}, {college.state}</div>
-                                <button class="button is-info is-small is-rounded" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, college)}>Add to favorites</button>
+                                <button class="button is-success is-small" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, college)}>Add to favorites</button>
                                 
                             </li>
                         </ul>

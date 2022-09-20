@@ -14,7 +14,7 @@ export const NavBar = ({ isStaff, token, setToken }) => {
     }
 
     return (
-        <nav className="navbar is-success mb-3" role="navigation" aria-label="main navigation">
+        <nav className="navbar mb-3 is-info" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/">
                     {/* <img src={Logo} height="3rem" alt="Rare Logo" /> <h1 className="title is-4">Rare Publishing</h1> */}
@@ -48,7 +48,7 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                                             <Link to="/players" className="navbar-item">Players</Link>
                                             <Link to="/games" className="navbar-item">Games</Link>
                                             <Link to="/openings" className="navbar-item">Open Positions</Link>
-                                            <Link to={`/users/${userId}`} className="navbar-item">My Profile</Link>
+                                            
                                             
                                             
                                         </>

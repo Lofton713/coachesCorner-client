@@ -14,7 +14,7 @@ export const CoachList = () => {
 
 
     return (
-        <article className="games" class="columns is-multiline is-mobile">
+        <article className="games" class="column is-multiline is-mobile">
             <header class="title 2">
                 Coaches
             </header>
