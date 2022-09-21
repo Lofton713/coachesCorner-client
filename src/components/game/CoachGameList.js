@@ -31,7 +31,7 @@ export const CoachGameList = () => {
 
     useEffect(
         () => {
-            const filteredGames = games.filter(game => game?.attendees?.user?.id === currentCoach?.Id )
+            const filteredGames = games.filter(game => game?.attendees?.user?.id === currentCoach?.user?.id )
             setCoachGames(filteredGames)
         },[games]
     )

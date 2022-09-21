@@ -40,17 +40,17 @@ export const PlayerGameList = () => {
 
     return(<>
         <h2 class="title is-4">Upcoming Games</h2>
-        <article class="box">
+        <article class="column">
                     {
                         userGames.map(playerGame => {
-                            return <section key={`game--${playerGame.id}`} className="game">
+                            return <section key={`game--${playerGame.id}`} class="box">
                                 <ul>
                                     <li>
                                         <div className="game_date">Date: {playerGame?.date}</div>
                                         <div className="game_date">Date: {playerGame?.city}, {playerGame?.state}</div>
                                     </li>
                                 </ul>
-                                <button className="button is-danger" onClick={() => { deleteGame(playerGame.id).then(() => {
+                                <button class="button is-danger is-small" onClick={() => { deleteGame(playerGame.id).then(() => {
                                     navigate('/playerHome/userID')
                                 })}}>Delete</button>
                             </section>

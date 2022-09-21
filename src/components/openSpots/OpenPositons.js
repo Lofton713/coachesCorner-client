@@ -35,7 +35,7 @@ export const OpenPositionList = () => {
                             <button class="button is-success is-small" onClick={() => navigate(`/openings/${openPosition.id}`)} >View Applicants</button>
                             
                             <button class="button is-danger is-small" onClick={() => { deleteOpenPosition(openPosition.id).then(() => {
-                                navigate('/coachHome/userID')
+                                navigate(`/coachHome/${localStorage.getItem('user_id')}`)
                             })}}>Delete</button>    
                                 
                             

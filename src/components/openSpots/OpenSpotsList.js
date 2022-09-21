@@ -20,7 +20,7 @@ export const OpenSpotList = () => {
 
         const newApplicant = {
             openSpot: openSpot.id,
-            player: currentUser
+            player: parseInt(currentUser)
         }
 
         createApplicant(newApplicant)

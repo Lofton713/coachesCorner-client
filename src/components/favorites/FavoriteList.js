@@ -29,14 +29,14 @@ export const FavoritesList = ()  => {
 
     useEffect(
         () => {
-            const filteredFavorites = favorites.filter(fav => fav?.player?.user.id === currentPlayer.id )
+            const filteredFavorites = favorites.filter(fav => fav?.player?.user.id === currentPlayer)
             setUserFavorites(filteredFavorites)
         },[favorites]
     )
 
     return (<>
         <h2 class="title is-4">Favorite Schools</h2>
-        <article className="MyOpenPositions" class="columns is-multiline is-mobile">
+        <article className="MyOpenPositions" class="column">
             
             {
                 userFavorites.map(favorite => {
@@ -47,11 +47,11 @@ export const FavoritesList = ()  => {
                                 <div className="fav__School">Position: {favorite?.college?.name} </div>
                                 <div className="fav_location">Location: {favorite?.college?.city}, {favorite?.college?.state} </div>
                             </li>
-                        </ul>
-                    
-                        <button className="button is-danger" onClick={() => { deleteFavorite(favorite.id).then(() => {
+                        <button class="button is-danger is-small" onClick={() => { deleteFavorite(favorite.id).then(() => {
                                     navigate('/playerHome/userID')
                                 })}}>Delete</button>
+                        </ul>
+                    
                         
                         
                     </section>

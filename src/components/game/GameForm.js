@@ -96,7 +96,7 @@ export const GameForm = () => {
 
                     // Send POST request to your API
                     createGame(game)
-                        .then(() => navigate("/playerhome/userId"))
+                        .then(() => navigate(`/playerhome/${localStorage.getItem('user_id')}`))
                 }}
                 className="btn btn-primary">Create</button>
         </form>

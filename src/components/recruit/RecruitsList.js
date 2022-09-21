@@ -21,18 +21,19 @@ export const RecruitsList = () => {
 
 
     return (
-        <article className="MyRecruits">
+        <article className="MyRecruits" class="column">
+            <header class="title">
+                Game List
+            </header>
             
             {
                 recruits.map(recruit => {
-                    return  <section key={`recruit--${recruit.id}`} className="position">
-                        <ol>
+                    return  <section key={`recruit--${recruit.id}`} className="position" class="box">
+                        <ul>
 
-                            <li>
-                                <div className="recruit__name">Name: {recruit.player.user.first_name} {recruit.player.user.last_name} </div>                                
-                            </li>
-                        </ol>
-                        <button className="button is-danger is-small" onClick={() => {
+                            <li className="recruit__name">Name: {recruit.player.user.first_name} {recruit.player.user.last_name}</li>
+                        </ul>
+                        <button class="button is-danger is-small" onClick={() => {
                             const confirmBox = window.confirm("Do you really want to remove this recruit?")
                             if (confirmBox)
                                 handleDelete(recruit.id)

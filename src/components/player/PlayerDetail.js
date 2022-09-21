@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { getGamesByUser } from "../../managers/GameManager"
 import { getPlayerById } from "../../managers/PlayerManager"
+import { createRecruit } from "../../managers/RecruitManager"
 
 export const PlayerDetail = () => {
 
@@ -9,7 +10,7 @@ export const PlayerDetail = () => {
     const [player, setPlayer] = useState([])
     const [playerGames, setPlayerGames] = useState([])
 
-    const navigate = useNavigate()
+    const currentUser = localStorage.getItem("user_id")
 
     useEffect(() => {
         getPlayerById(playerId).then(data => setPlayer(data))
@@ -27,6 +28,18 @@ export const PlayerDetail = () => {
     useEffect(() => {
         loadGames()
     }, [])
+
+    const handleSaveButtonClick = (event, player) => {
+        event.preventDefault()
+        alert("Recruit Added to Favorites 👍")
+
+        const newFav = {
+            player: player.id,
+            coach: currentUser
+        }
+
+        createRecruit(newFav)
+    }
 
 
 
@@ -72,7 +85,7 @@ export const PlayerDetail = () => {
                     </ol>
                 </article>
 
-                <button class="button is-info">Add Recruit</button>
+                <button class="button is-info" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, player)}>Add Recruit</button>
         </>
     )
 }

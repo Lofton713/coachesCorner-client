@@ -7,7 +7,7 @@ export const CollegeList = () => {
 
     const [colleges, setColleges] = useState([])
     const Navigate = useNavigate()
-    const currentUser = localStorage.getItem("user_id")
+    const currentUser = parseInt(localStorage.getItem("user_id"))
     
     useEffect(() => {
         getAllColleges().then(data => setColleges(data))

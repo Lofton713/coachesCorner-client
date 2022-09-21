@@ -30,7 +30,7 @@ export const CoachEdit = () => {
             last_name: coach?.user?.last_name,
             bio: coach.bio,
             email: coach?.user?.email,
-            college: coach.collegeId
+            // college: parseInt(coach.college)
         }
 
         updateCoach(userId, coachData).then((coach) => {
@@ -93,8 +93,8 @@ export const CoachEdit = () => {
                     </div>
                 </div>
 
-                <div className="form-group">
-                    <select name="collegeId"
+                {/* <div className="form-group">
+                    <select name="college"
                                     proptype="int"
                                     value={coach.collegeId}
                                     onChange={handleChange}>
@@ -105,24 +105,14 @@ export const CoachEdit = () => {
                                             </option>
                                         ))}
                                 </select>
-                </div>
-
-                {/* <div className="field">
-                    <label className="label">College</label>
-                    <div className="control">
-                        <input type="select" name="college" required autoFocus className="input"
-                            placeholder={coach.college}
-                            defaultValue={coach.college}
-                            onChange={handleChange}
-                        />
-                    </div>
                 </div> */}
 
+                
                 <div className="field is-grouped">
                     <div className="control">
                     <button type="submit"
                         onClick={handleSubmit}
-                        className="button is-success">
+                        className="button is-success is-small">
                         Update
                     </button>
                 </div>
