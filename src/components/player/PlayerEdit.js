@@ -5,6 +5,7 @@ import { getCurrentPlayer, updatePlayer } from "../../managers/PlayerManager"
 export const EditPlayer = () => {
     const [player, setPlayer] = useState({})
     const { userId } = useParams()
+    const currentUser = localStorage.getItem("user_id")
 
     useEffect(() => {
         getCurrentPlayer(userId).then(data => {

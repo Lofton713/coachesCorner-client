@@ -15,8 +15,8 @@ export const RecruitsList = () => {
         loadRecruits()
     }, [])
 
-    const handleDelete = (recruitId) => {
-        deleteRecruit(recruitId).then(loadRecruits)
+    const handleDelete = (id) => {
+        deleteRecruit(id).then(loadRecruits)
     }
 
 
@@ -32,7 +32,7 @@ export const RecruitsList = () => {
                                 <div className="recruit__name">Name: {recruit.player.user.first_name} {recruit.player.user.last_name} </div>                                
                             </li>
                         </ol>
-                        <button className="button is-danger" onClick={() => {
+                        <button className="button is-danger is-small" onClick={() => {
                             const confirmBox = window.confirm("Do you really want to remove this recruit?")
                             if (confirmBox)
                                 handleDelete(recruit.id)

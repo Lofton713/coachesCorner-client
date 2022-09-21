@@ -15,6 +15,7 @@ import { OpenSpotList } from "../components/openSpots/OpenSpotsList"
 import { PlayerProfile } from "../components/profile/PlayerProfile"
 import { PlayerDetail } from "../components/player/PlayerDetail"
 import { CoachHome } from "../components/home/CoachHome"
+import { ApplicantList } from "../components/applicant/ApplicantList"
 
 export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, isActive }) => {
     return <Routes>
@@ -36,6 +37,7 @@ export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, 
                 <Route path="/players" element={<PlayerList />} />
                 <Route path="/games" element={<GameList />} />
                 <Route path="/openings" element={<OpenPositionList />} />
+                <Route path="/openings/:openSpotId" element={<ApplicantList />} />
                 <Route path="/profile" element={<CoachProfile />} />
                 <Route path="/players/:playerId" element={<PlayerDetail />} />
                 <Route path="/coachhome/:userId" element={<CoachHome />} />

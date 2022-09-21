@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { deleteOpenPosition, getCurrentUsersOpenPositions } from "../../managers/OpenPositionManager"
 import { OpenPositionForm } from "./OpenPositionForm"
+import { Link } from 'react-router-dom'
 
 export const OpenPositionList = () => {
     const [openPositions, setOpenPositions] = useState([])
@@ -31,7 +32,7 @@ export const OpenPositionList = () => {
 
                             <li className="OP__position">Position: {openPosition.position} </li>
                             <li className="OP_description">Description: {openPosition.description}  </li>
-                            <button class="button is-success is-small">View Applicants</button>
+                            <button class="button is-success is-small" onClick={() => navigate(`/openings/${openPosition.id}`)} >View Applicants</button>
                             
                             <button class="button is-danger is-small" onClick={() => { deleteOpenPosition(openPosition.id).then(() => {
                                 navigate('/coachHome/userID')
@@ -45,7 +46,7 @@ export const OpenPositionList = () => {
                     </section>
                 })
             }
-            <div class="column" >
+            <div class="column form" >
                 <OpenPositionForm  />
             </div>
         </article>
