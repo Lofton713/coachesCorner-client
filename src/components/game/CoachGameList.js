@@ -18,37 +18,21 @@ export const CoachGameList = () => {
     },[]
     )
 
-    const loadGames = () => {
-        getAllGames()
-        .then((postArray) => {
-            setGames(postArray)
-        })
-    }
-
-    useEffect(() => {
-        loadGames(games)
-    }, [])
-
-    useEffect(
-        () => {
-            const filteredGames = games.filter(game => game?.attendees?.user?.id === currentCoach?.user?.id )
-            setCoachGames(filteredGames)
-        },[games]
-    )
+    
 
     return(<>
+        <article class="column box">
         <h2 class="title is-4">Upcoming Games</h2>
-        <article class="box">
                     {
-                        coachGames.map(Game => {
-                            return <section key={`game--${Game.id}`} className="game">
+                        currentCoach.attending?.map(Game => {
+                            return <section key={`game--${Game.id}`} className="game" class="box">
                                 <ul>
                                     <li className="game_date">Game: {Game?.description}</li>
                                     <li className="game_date">Date: {Game?.date}</li>
                                     <li className="game_date">Date: {Game?.city}, {Game?.state}</li>
                                 </ul>
-                                <button className="button is-danger" onClick={() => { deleteGame(Game.id).then(() => {
-                                    navigate('/playerHome/userID')
+                                <button className="button is-danger is-small" onClick={() => { deleteGame(Game.id).then(() => {
+                                    navigate(`/coachHome/${localStorage.getItem('user_id')}`)
                                 })}}>Delete</button>
                             </section>
                         })

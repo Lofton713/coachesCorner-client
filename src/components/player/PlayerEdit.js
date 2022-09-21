@@ -7,12 +7,19 @@ export const EditPlayer = () => {
     const { userId } = useParams()
     const currentUser = localStorage.getItem("user_id")
 
-    useEffect(() => {
+    const loadPlayer = () => {
+        
         getCurrentPlayer(userId).then(data => {
+            data.first_name = data.user.first_name
+            data.last_name = data.user.last_name
+            data.email = data.user.email
             setPlayer(data)
-
+    
         })
+    }
 
+    useEffect(() => {
+        loadPlayer()
     }, [userId])
 
     const handleSubmit = (evt) => {
@@ -20,8 +27,8 @@ export const EditPlayer = () => {
     
 
         let playerData = {
-            first_name: player?.user?.first_name,
-            last_name: player?.user?.last_name,
+            first_name: player?.first_name,
+            last_name: player?.last_name,
             birthday: player.birthday,
             bio: player.bio,
             GPA: player.GPA,
@@ -29,11 +36,11 @@ export const EditPlayer = () => {
             state: player.state,
             position: player.position,
             grade: player.grade,
-            email: player?.user?.email
+            email: player?.email
         }
 
         updatePlayer(userId, playerData).then((player) => {
-
+            loadPlayer()
         })
     }
 

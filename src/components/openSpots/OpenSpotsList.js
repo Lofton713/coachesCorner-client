@@ -35,11 +35,11 @@ export const OpenSpotList = () => {
         <article className="openSpots" class="columns">
             {
                 openSpots.map(openSpot => {
-                    return  <section key={`OS--${openSpot.id}`} className="game" class="column">
+                    return  <section key={`OS--${openSpot.id}`} className="game" class="column box">
                         <ul class="box">
-                                <div className="OP__">Position: {openSpot.position} </div>
-                                <div className="OP__time"> Description: {openSpot.description}  </div>
-                                <div className="OP_player">School: {openSpot?.college.name}</div>
+                                <li className="OP__" class="field">Position: {openSpot.position} </li>
+                                <li className="OP__time" class="field"> Description: {openSpot.description}  </li>
+                                <li className="OP_player" class="field">School: {openSpot?.college.name}</li>
                                 <button class="button is-success is-small" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, openSpot)}>Apply for Position</button>                            
                         </ul>
                         

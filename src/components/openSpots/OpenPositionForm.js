@@ -28,8 +28,8 @@ export const OpenPositionForm = () => {
     
 
     return (
-        <form className="openPositionForm" class="form">
-            <h2 className="openPositionForm__title" class="title">New Open Position</h2>
+        <form className="openPositionForm" class="column box">
+            <h1 className="openPositionForm__title" class="title is-4">New Open Position</h1>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Position </label>

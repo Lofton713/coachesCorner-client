@@ -21,9 +21,9 @@ export const RecruitsList = () => {
 
 
     return (
-        <article className="MyRecruits" class="column">
-            <header class="title">
-                Game List
+        <article className="MyRecruits" class="column box">
+            <header class="title is-4">
+            Recruit List
             </header>
             
             {

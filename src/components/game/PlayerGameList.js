@@ -3,9 +3,9 @@ import { navigate, useNavigate, useParams } from "react-router-dom"
 import { deleteGame, getAllGames} from "../../managers/GameManager"
 import { getCurrentPlayer } from "../../managers/PlayerManager"
 
-export const PlayerGameList = () => {
+export const PlayerGameList = ({loadGames, games}) => {
 
-    const [games, setGames] = useState([])
+    
     const [userGames, setUserGames] = useState([])
     const { userId } = useParams()
     const navigate = useNavigate()
@@ -19,21 +19,11 @@ export const PlayerGameList = () => {
 
     
 
-    const loadGames = () => {
-        getAllGames()
-        .then((postArray) => {
-            setGames(postArray)
-        })
-    }
-
-    useEffect(() => {
-        loadGames(games)
-    }, [])
 
 
     useEffect(
         () => {
-            const filteredGames = games.filter(game => game?.player?.user?.id === currentPlayer.id )
+            const filteredGames = games.filter(game => game?.player?.id === currentPlayer.id )
             setUserGames(filteredGames)
         },[games]
     )
@@ -45,14 +35,15 @@ export const PlayerGameList = () => {
                         userGames.map(playerGame => {
                             return <section key={`game--${playerGame.id}`} class="box">
                                 <ul>
-                                    <li>
-                                        <div className="game_date">Date: {playerGame?.date}</div>
-                                        <div className="game_date">Date: {playerGame?.city}, {playerGame?.state}</div>
-                                    </li>
+                                    <div className="game_date">Game: {playerGame?.description}</div>
+                                    <div className="game_date">Date: {playerGame?.date}</div>
+                                    <div className="game_date">Location: {playerGame?.city}, {playerGame?.state}</div>
+                                    
                                 </ul>
                                 <button class="button is-danger is-small" onClick={() => { deleteGame(playerGame.id).then(() => {
-                                    navigate('/playerHome/userID')
-                                })}}>Delete</button>
+                                    loadGames()})
+
+                                }}>Delete</button>
                             </section>
                         })
                     }

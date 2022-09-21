@@ -10,6 +10,9 @@ export const CoachEdit = () => {
 
     useEffect(() => {
         getCurrentCoach(userId).then(data => {
+            data.first_name = data.user.first_name
+            data.last_name = data.user.last_name
+            data.email = data.user.email
             setCoach(data)
         })
     },[userId]
@@ -26,10 +29,10 @@ export const CoachEdit = () => {
     
 
         let coachData = {
-            first_name: coach?.user?.first_name,
-            last_name: coach?.user?.last_name,
+            first_name: coach?.first_name,
+            last_name: coach?.last_name,
             bio: coach.bio,
-            email: coach?.user?.email,
+            email: coach?.email,
             // college: parseInt(coach.college)
         }
 
@@ -44,7 +47,8 @@ export const CoachEdit = () => {
     }
 
     return (
-        <section className="columns is-centered">
+        <section className="columns is-centered" class="column box">
+            <h1 class="title is-4">Edit Info</h1>
             <form className="column is-two-thirds">
 
 

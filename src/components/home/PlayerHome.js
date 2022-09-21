@@ -4,9 +4,25 @@ import { GameList } from "../game/GameList"
 import { EditPlayer } from "../player/PlayerEdit"
 import { PlayerProfile } from "../profile/PlayerProfile"
 import { PlayerGameList } from "../game/PlayerGameList"
+import { useEffect, useState } from "react"
+import { getAllGames } from "../../managers/GameManager"
 
 
 export const PlayerHome = () => {
+    const [games, setGames] = useState([])
+
+    
+    const loadGames = () => {
+        getAllGames()
+        .then((postArray) => {
+            setGames(postArray)
+        })
+    }
+
+    useEffect(() => {
+        loadGames(games)
+    }, [])
+
 
 
     return (<>
@@ -27,13 +43,14 @@ export const PlayerHome = () => {
             </section>
             <section className="gameForm" class="column">
                 
-                <PlayerGameList />
+                <PlayerGameList loadGames={loadGames} games={games}/>
+                
             </section>
             <div>
 
             <section className="gameForm" class="column">
                 
-                <GameForm  />
+                <GameForm loadGames={loadGames}  />
             </section>
             </div>
         </article>

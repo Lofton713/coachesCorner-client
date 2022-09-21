@@ -32,28 +32,27 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                 <div className="navbar-start">
                     {
                         token
-                            ? <>
-                                <Link to="/" className="navbar-item">Home</Link>
-                                <Link to={`/playerHome/${userId}`} className="navbar-item">Player Portal</Link>
-                                <Link to="/coaches" className="navbar-item">Coaches</Link>
-                                <Link to="/colleges" className="navbar-item">Colleges</Link>
-                                <Link to="/openspots" className="navbar-item">Open Positions</Link>
-                                
-                                
-                                {
-                                    isStaff
-                                        ? <>
+                            ? isStaff ?
+                            
+                                        <>
                                             <Link to="/" className="navbar-item">Home</Link>
                                             <Link to={`/coachhome/${userId}`} className="navbar-item">Coach Portal</Link>
                                             <Link to="/players" className="navbar-item">Players</Link>
                                             <Link to="/games" className="navbar-item">Games</Link>
-                                            <Link to="/openings" className="navbar-item">Open Positions</Link>
+                                            <Link to="/openings" className="navbar-item">My Open Positions</Link>
                                             
                                             
                                             
                                         </>
-                                        : ""
-                                }
+                            :<>
+                                <Link to="/" className="navbar-item">Home</Link>
+                                <Link to={`/playerHome/${userId}`} className="navbar-item">Player Portal</Link>
+                                <Link to="/coaches" className="navbar-item">Coaches</Link>
+                                <Link to="/colleges" className="navbar-item">Colleges</Link>
+                                <Link to="/openspots" className="navbar-item">Available Positions</Link>
+                                
+                                
+                                
                             </>
                             :
                             ""

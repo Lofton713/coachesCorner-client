@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { createGame } from "../../managers/GameManager"
 
-export const GameForm = () => {
+export const GameForm = ({loadGames}) => {
 
     const navigate = useNavigate()
     const [games, setGames] = useState([])
@@ -96,9 +96,9 @@ export const GameForm = () => {
 
                     // Send POST request to your API
                     createGame(game)
-                        .then(() => navigate(`/playerhome/${localStorage.getItem('user_id')}`))
+                        .then(() => loadGames())
                 }}
-                className="btn btn-primary">Create</button>
+                className="btn btn-primary" class="button is-success is-small">Create</button>
         </form>
     </>
     )

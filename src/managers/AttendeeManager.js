@@ -6,14 +6,14 @@ export const getAllAttendees = () => {
     }).then(res => res.json())
 }
 
-export const addAttendee = (gameId, attendeeId) => {
+export const addAttendee = (gameId) => {
     return fetch(`http://localhost:8000/games/${gameId}/add`, {
         method: "POST",
         headers: {
             'Authorization': `Token ${localStorage.getItem('auth_token')}`,
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(attendeeId)
+        body: JSON.stringify()
     })
 }
 
@@ -28,7 +28,7 @@ export const createAttendee = (attendee) => {
     }).then(res => res.json())
 }
 
-export const deleteRecruit = (AttendeeId) => {
+export const deleteRecruit = (attendeeId) => {
     return fetch(`http://localhost:8000/attendees/${attendeeId}`, {
         method: 'DELETE',
         headers: {
