@@ -21,7 +21,7 @@ export const CoachGameList = () => {
     
 
     return(<>
-        <article class="column box">
+        <article class="column box has-text-centered">
         <h2 class="title is-4">Upcoming Games</h2>
                     {
                         currentCoach.attending?.map(Game => {

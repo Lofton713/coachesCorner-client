@@ -21,14 +21,14 @@ export const OpenPositionList = () => {
 
 
     return (<>
-            <header class="title">
+            <header class="title is-2">
                 My Open Positions
             </header>
-        <article className="MyOpenPositions" class="columns">
+        <article className="MyOpenPositions" class="columns box">
             {
                 openPositions.map(openPosition => {
                     return  <section key={`open--${openPosition.id}`} className="position" class="column">
-                        <ol class="box">
+                        <ul class="box">
 
                             <li className="OP__position">Position: {openPosition.position} </li>
                             <li className="OP_description">Description: {openPosition.description}  </li>
@@ -39,7 +39,7 @@ export const OpenPositionList = () => {
                             })}}>Delete</button>    
                                 
                             
-                        </ol>
+                        </ul>
                         
                         
                         

@@ -37,15 +37,14 @@ export const PlayerList = () => {
     
 
     return ( <>
-        <div class="columns">
-            <header>
-                <h1 class="title is-2 ">Players</h1>
+            <header class="title is-2">Players
             </header>
-            <div class="column">
+        <div class="columns">
+            <div class="column card has-text-centered is-one-quarter">
 
             {
                 players.map(player => {
-                    return  <section key={`player--${player.id}`} class="column card">
+                    return  <section key={`player--${player.id}`} class="box">
                         <header className="lotHeader">
                             <Link className="player__name" to={`/players/${player.id}`}>{player?.user?.first_name} {player?.user?.last_name}</Link>
                         </header>

@@ -45,9 +45,9 @@ export const PlayerDetail = () => {
 
     return (
         <>
-            <h1 class="title"> Player Details</h1>
+            <h1 class="title is-2"> Player Details</h1>
                 <article class="card">
-                    <section>
+                    <section class="box">
                         {player.profile_pic}
                     </section>
 
@@ -57,26 +57,26 @@ export const PlayerDetail = () => {
                         <li className="player_location">Location: {player?.hometown}, {player.state}</li>
                         <li className="Player_gpa"> GPA: {player.GPA}  </li>
                         <li className="Player_Email"> Email: {player?.user?.email}  </li>
-                        <li className="Player_bio"> About Me: {player.bio}  </li>
+                        <li className="Player_bio"> Bio: {player.bio}  </li>
                     </ol>
                 </article>
             
         
 
 
-            <h2 class="title"> Upcoming Matches</h2>
-                <article>
+            <h2 class="title is-4"> Upcoming Matches</h2>
+                <article class="box">
                     {
                         playerGames.map(playerGame => {
                             return <section class="box" key={`game--${playerGame.id}`} className="game">
-                                <ul>
+                                <ul class="box">
                                     <li className="game_date">Game: {playerGame?.description}</li>
                                     <li className="game_date">Date: {playerGame?.date}</li>
                                     <li className="game_date">Location: {playerGame?.city}, {playerGame?.state}</li>
                                     <li className="game_date">Time: {playerGame?.time}</li>
                                     
-                                </ul>
                                 <button class="button is-success is-small">Attend</button>
+                                </ul>
                             </section>
                         })
                     }

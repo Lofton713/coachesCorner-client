@@ -31,10 +31,10 @@ export const GameList = () => {
 
     return ( 
         <>
-        <article className="games">
             <header class="title">
                 Game List
             </header>
+        <article className="games" class="column card has-text-centered is-one-quarter">
             {
                 games.map(game => {
                     return  <section key={`game--${game.id}`} className="game" class="box">

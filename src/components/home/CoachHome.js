@@ -1,10 +1,23 @@
+import { useEffect, useState } from "react"
+import { getAllRecruits } from "../../managers/RecruitManager"
 import { CoachEdit } from "../coach/CoachEdit"
 import { CoachGameList } from "../game/CoachGameList"
 import { OpenPositionForm } from "../openSpots/OpenPositionForm"
 import { RecruitsList } from "../recruit/RecruitsList"
 
 export const CoachHome = () => {
+    const [recruits, setRecruits] = useState([])
 
+    const loadRecruits = () => {
+        getAllRecruits()
+        .then((postArray) => {
+            setRecruits(postArray)
+        })
+    }
+
+    useEffect(() => {
+        loadRecruits(recruits)
+    },[])
 
     return (<>
         <h1 class="title"> Coach Homepage </h1>
@@ -19,11 +32,11 @@ export const CoachHome = () => {
             </section>
             <section className="editForm" class="column">
                 
-                <RecruitsList />
+                <RecruitsList loadRecruits={loadRecruits} recruits={recruits}/>
             </section>
             <section className="editForm" class="column">
                 
-                <CoachGameList />
+                <CoachGameList loadRecruits={loadRecruits} recruits={recruits} />
             </section>
             <section className="editForm" class="column">
                 
