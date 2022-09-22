@@ -47,9 +47,9 @@ export const PlayerDetail = () => {
         <>
             <h1 class="title is-2"> Player Details</h1>
                 <article class="card">
-                    <section class="box">
+                    {/* <section class="box">
                         {player.profile_pic}
-                    </section>
+                    </section> */}
 
                     <ol>
                         <li className="player__name">Name: {player?.user?.first_name} {player?.user?.last_name} </li>

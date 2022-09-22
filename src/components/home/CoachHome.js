@@ -26,19 +26,19 @@ export const CoachHome = () => {
         <image class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png"></image>
         </figure>
         <article class="columns">
-        <section className="editForm" class="column">
+        <section className="editForm" class="column box">
                 
                 <CoachEdit />
             </section>
-            <section className="editForm" class="column">
+            <section className="editForm" class="column box">
                 
                 <RecruitsList loadRecruits={loadRecruits} recruits={recruits}/>
             </section>
-            <section className="editForm" class="column">
+            <section className="editForm" class="column box">
                 
                 <CoachGameList loadRecruits={loadRecruits} recruits={recruits} />
             </section>
-            <section className="editForm" class="column">
+            <section className="editForm" class="column box">
                 
                 <OpenPositionForm />
             </section>

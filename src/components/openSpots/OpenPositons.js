@@ -24,7 +24,7 @@ export const OpenPositionList = () => {
             <header class="title is-2">
                 My Open Positions
             </header>
-        <article className="MyOpenPositions" class="columns box">
+        <article className="MyOpenPositions" class="columns ">
             {
                 openPositions.map(openPosition => {
                     return  <section key={`open--${openPosition.id}`} className="position" class="column">

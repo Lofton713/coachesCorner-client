@@ -21,7 +21,7 @@ export const RecruitsList = () => {
 
 
     return (
-        <article className="MyRecruits" class="column box has-text-centered">
+        <article className="MyRecruits" class="column has-text-centered">
             <header class="title is-4">
             Recruit List
             </header>
@@ -31,8 +31,8 @@ export const RecruitsList = () => {
                     return  <section key={`recruit--${recruit.id}`} className="position" class="box">
                         <ul>
 
-                            <li className="recruit__name">Name: {recruit.player.user.first_name} {recruit.player.user.last_name}</li>
-                            <li className="recruit__name">Position: {recruit.player.position}</li>
+                            <li className="recruit__name">Name: {recruit?.player?.user?.first_name} {recruit?.player?.user?.last_name}</li>
+                            <li className="recruit__name">Position: {recruit?.player?.position}</li>
                         </ul>
                         <button class="button is-danger is-small" onClick={() => {
                             const confirmBox = window.confirm("Do you really want to remove this recruit?")

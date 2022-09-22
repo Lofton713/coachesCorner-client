@@ -40,8 +40,8 @@ export const FavoritesList = ()  => {
             
             {
                 userFavorites.map(favorite => {
-                    return  <section key={`fav--${favorite.id}`} className="position" >
-                        <ul class="box">
+                    return  <section key={`fav--${favorite.id}`} class="box" >
+                        <ul>
 
                             <li>
                                 <div className="fav__School">School: {favorite?.college?.name} </div>

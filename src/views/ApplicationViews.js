@@ -16,6 +16,7 @@ import { PlayerProfile } from "../components/profile/PlayerProfile"
 import { PlayerDetail } from "../components/player/PlayerDetail"
 import { CoachHome } from "../components/home/CoachHome"
 import { ApplicantList } from "../components/applicant/ApplicantList"
+import { CoachDetail } from "../components/coach/CoachDetail"
 
 export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, isActive }) => {
     return <Routes>
@@ -27,6 +28,7 @@ export const ApplicationViews = ({ isStaff, token, setToken, setUserId, userId, 
             <Route path="" element={<HomePage />} />
             <Route path="/playerhome/:userId" element={<PlayerHome />} />
             <Route path="/coaches" element={<CoachList />} />
+            <Route path="/coaches/:coachId" element={<CoachDetail />} />
             <Route path="/colleges" element={<CollegeList />} />
             <Route path="/openspots" element={<OpenSpotList />} />
             <Route path="/users/:userId" element={<PlayerProfile />} />

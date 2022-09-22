@@ -29,19 +29,20 @@ export const CollegeList = () => {
     
 
 
-    return (
-        <article className="colleges" class="columns is-multiline is-mobile"  >
-            <header class="title is-4">
+    return (<>
+        <header class="title is-4">
                 Colleges
             </header>
+                <article className="colleges" class="columns is-multiline is-mobile"  >
             {
                 colleges.map(college => {
-                    return  <section key={`college--${college.id}`} className="college" class="column is-one-quarter">
+                    return  <section key={`college--${college.id}`} className="college" class="column is-one-quarter has-text-centered">
                         <ul class="box">
 
                             <li>
                                 <div className="college__name">University: {college?.name}</div>
                                 <div className="coach__college">location: {college.city}, {college.state}</div>
+                                <div className="coach_GPA">Minimum GPA: {college?.min_GPA}</div>
                                 <button class="button is-success is-small" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, college)}>Add to favorites</button>
                                 
                             </li>
@@ -50,6 +51,6 @@ export const CollegeList = () => {
                 })
             }
         </article>
+    </>
     )
-
 }

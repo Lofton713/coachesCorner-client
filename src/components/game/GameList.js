@@ -34,17 +34,17 @@ export const GameList = () => {
             <header class="title">
                 Game List
             </header>
-        <article className="games" class="column card has-text-centered is-one-quarter">
+        <article className="games" class="columns is-multiline is-mobile">
             {
                 games.map(game => {
-                    return  <section key={`game--${game.id}`} className="game" class="box">
-                        <ul>
+                    return  <section key={`game--${game.id}`} className="game" class="column is-one-quarter has-text-centered">
+                        <ul class="box">
 
                             <li>
-                                <div className="game_player">Player: {game?.player?.user?.first_name} {game.player.user.last_name} </div>
+                                <div className="game_player">Player: {game?.player?.user?.first_name} {game?.player?.user?.last_name} </div>
                                 <div className="game__player">Date: {game?.date} </div>
-                                <div className="game__time">Time: {game.time}  </div>
-                                <div className="game_location">Location: {game.city}, {game.state}</div>
+                                <div className="game__time">Time: {game?.time}  </div>
+                                <div className="game_location">Location: {game?.city}, {game?.state}</div>
                                 <button class="button is-success is-small" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, game)}>Attend</button>
                             </li>
                         </ul>                  

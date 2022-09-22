@@ -37,28 +37,27 @@ export const PlayerList = () => {
     
 
     return ( <>
-            <header class="title is-2">Players
+            <header class="title is-4">Players
             </header>
-        <div class="columns">
-            <div class="column card has-text-centered is-one-quarter">
+        
+            <article class="columns is-multiline is-mobile">
 
             {
                 players.map(player => {
-                    return  <section key={`player--${player.id}`} class="box">
+                    return  <section key={`player--${player.id}`} class="column is-one-quarter has-text-centered">
+                        <ul class="box" >
                         <header className="lotHeader">
                             <Link className="player__name" to={`/players/${player.id}`}>{player?.user?.first_name} {player?.user?.last_name}</Link>
                         </header>
-                        <ul type="1" >
                             <li className="player__birthday"> Grade: {player.grade}</li>
                             <li className="player__birthday"> Position: {player.position}</li>
                             <li className="player_city"> Hometown: {player?.hometown}, {player.state}</li>
-                        </ul>
                         <button class="button is-success is-small" onClick={(clickEvent) => handleSaveButtonClick(clickEvent, player)}>Add to Recruits List</button>  
+                        </ul>
                     </section>
                 })
             }
-            </div>
-        </div>
+            </article>
     </>
     )
 }

@@ -16,7 +16,7 @@ export const OpenSpotList = () => {
 
     const handleSaveButtonClick = (event, openSpot) => {
         event.preventDefault()
-        alert("school Lot Added to Favorites 👍")
+        alert("Your information has been sent👍")
 
         const newApplicant = {
             openSpot: openSpot.id,
@@ -32,10 +32,10 @@ export const OpenSpotList = () => {
             <header class="title 2">
                 Open Spots
             </header>
-        <article className="openSpots" class="columns">
+        <article className="openSpots" class="columns is-multiline">
             {
                 openSpots.map(openSpot => {
-                    return  <section key={`OS--${openSpot.id}`} className="game" class="column box">
+                    return  <section key={`OS--${openSpot.id}`} className="game" class="column is-one-quarter">
                         <ul class="box">
                                 <li className="OP__" class="field">Position: {openSpot.position} </li>
                                 <li className="OP__time" class="field"> Description: {openSpot.description}  </li>

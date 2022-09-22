@@ -32,23 +32,23 @@ export const PlayerHome = () => {
         </figure> */}
         <article class="columns">
         
-        <section className="gameForm" class="column">
+        <section className="gameForm" class="column box">
                 
                 <EditPlayer />
             </section>
             
-            <section className="gameForm" class="column">
+            <section className="gameForm" class="column box">
                 
                 <FavoritesList />
             </section>
-            <section className="gameForm" class="column">
+            <section className="gameForm" class="column box">
                 
                 <PlayerGameList loadGames={loadGames} games={games}/>
                 
             </section>
             <div>
 
-            <section className="gameForm" class="column">
+            <section className="gameForm" class="column box">
                 
                 <GameForm loadGames={loadGames}  />
             </section>

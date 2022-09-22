@@ -19,6 +19,17 @@ export const NavBar = ({ isStaff, token, setToken }) => {
                 <a className="navbar-item" href="/">
                     {/* <img src={Logo} height="3rem" alt="Rare Logo" /> <h1 className="title is-4">Rare Publishing</h1> */}
                 </a>
+                <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <img src="https://dt5602vnjxv0c.cloudfront.net/portals/6916/images/coaches_corner-001.jpg" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="100" height="175"></img>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={showMobileNavbar} ref={hamburger}>

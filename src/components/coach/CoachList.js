@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { getAllCoaches } from "../../managers/CoachManager"
 
 export const CoachList = () => {
@@ -13,28 +13,29 @@ export const CoachList = () => {
     )
 
 
-    return (
-        <article className="games" class="column is-multiline is-mobile">
-            <header class="title 2">
+    return (<>
+        <header class="title is-4">
                 Coaches
             </header>
+            <article class="columns is-multiline ">
+
+                
             {
                 coaches.map(coach => {
-                    return  <section key={`coach--${coach.id}`} className="coach" class="column">
-                        <ul class="box">
-
+                    return  <section key={`coach--${coach.id}`} className="coach" class="column is-one-quarter has-text-centered ">
+                        <ul class="box">    
+                        <header className="lotHeader">
+                            <Link className="coach__name" to={`/coaches/${coach.id}`}>{coach?.user?.first_name} {coach?.user?.last_name}</Link>
+                        </header>
                             <li>
-                                <div className="coach__name">Name: {coach?.user?.first_name} {coach.user.last_name} </div>
-                                <div className="coach__college">University: {coach?.college?.name}  </div>
-                                
+                                <div className="coach__college">University: {coach?.college?.name}</div>
                             </li>
                         </ul>
-                        
-                        
-                        
                     </section>
                 })
             }
-        </article>
+        
+    </article>
+    </>
     )
 }

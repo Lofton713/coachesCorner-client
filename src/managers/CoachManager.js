@@ -25,3 +25,12 @@ export const updateCoach = (id, coach) => {
         body: JSON.stringify(coach)
     })
 }
+
+export const getCoachById = (id) => {
+    return fetch(`http://localhost:8000/coaches/${id}`, {
+        headers: {
+            'Authorization': `Token ${localStorage.getItem('auth_token')}`
+        }
+    })
+        .then(res => res.json())
+}
