@@ -157,7 +157,7 @@ export const EditPlayer = () => {
                 <div className="field">
                     <label className="label">Bio</label>
                     <div className="control">
-                        <input type="text" name="bio" required autoFocus className="input"
+                        <textarea type="text" name="bio" required autoFocus className="input"
                             placeholder={player.bio}
                             defaultValue={player?.bio}
                             onChange={handleChange}

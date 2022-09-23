@@ -27,16 +27,16 @@ export const OpenPositionForm = () => {
     }
     
 
-    return (
-        <form className="openPositionForm" class="column box">
+    return (<>
             <h1 className="openPositionForm__title" class="title is-4">New Open Position</h1>
+        <form className="openPositionForm" class="column box">
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Position </label>
                     <input type="text" name="position" required autoFocus className="form-control"
                         value={currentOpenPosition.position}
                         onChange={changeOpenPositionState}
-                    />
+                        />
                 </div>
             </fieldset>
             <fieldset>
@@ -45,7 +45,7 @@ export const OpenPositionForm = () => {
                     <input type="text" name="description" required autoFocus className="form-control"
                         value={currentOpenPosition.description}
                         onChange={changeOpenPositionState}
-                    />
+                        />
                 </div>
             </fieldset>
             
@@ -71,19 +71,20 @@ export const OpenPositionForm = () => {
                 onClick={evt => {
                     // Prevent form from being submitted
                     evt.preventDefault()
-
+                    
                     const openPosition = {
                         position: currentOpenPosition.position,
                         description: currentOpenPosition.description,
                         college: parseInt(currentOpenPosition.college),
                         applicants: []
                     }
-
+                    
                     // Send POST request to your API
                     createOpenPosition(openPosition)
-                        .then(() => navigate("/openings"))
+                    .then(() => navigate("/openings"))
                 }}
                 class="button is-success is-small">Create</button>
         </form>
+                </>
     )
 }

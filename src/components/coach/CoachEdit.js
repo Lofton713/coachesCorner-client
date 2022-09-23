@@ -78,7 +78,7 @@ export const CoachEdit = () => {
                 <div className="field">
                     <label className="label">Bio</label>
                     <div className="control">
-                        <input type="text" name="bio" required autoFocus className="input"
+                        <textarea type="text" rows="15" cols="30" name="bio" required autoFocus className="input"
                             placeholder={coach.bio}
                             defaultValue={coach?.bio}
                             onChange={handleChange}
